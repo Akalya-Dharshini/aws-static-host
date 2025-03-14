@@ -1,0 +1,79 @@
+Project: Static Website Hosting on AWS S3
+📌 Overview
+This project involves hosting a static website using Amazon S3 (Simple Storage Service). The website is built with HTML, CSS, and JavaScript and is designed to be fully responsive, fast, and secure. It serves as a cloud-powered landing page, showcasing AWS's capabilities for static hosting, scalability, and security.
+
+📖 Project Details
+1️⃣ Key Objectives
+✔ Host a static website on AWS S3 without the need for a traditional web server.
+✔ Enable public access to the hosted content using S3 bucket policies.
+✔ Ensure performance, scalability, and security using AWS’s infrastructure.
+✔ Deliver a responsive and visually appealing UI using modern design principles.
+
+2️⃣ Tech Stack Used
+✅ AWS S3 → Storage for static files (HTML, CSS, JS)
+✅ AWS IAM → Manages permissions and security policies
+✅ Amazon CloudFront (Optional) → CDN for improved speed & caching
+✅ Route 53 (Optional) → Custom domain configuration
+
+3️⃣ Features & Functionalities
+🔹 Static Hosting on AWS S3 – Website is stored and served via S3
+🔹 Responsive & Modern UI – Adapts to all devices (Mobile, Tablet, Desktop)
+🔹 Optimized Performance – Fast loading times with optimized assets
+🔹 Custom S3 Bucket Policy – Allows public access to website files
+🔹 Cloud Scalability – Handles high traffic with AWS infrastructure
+🔹 Security Measures – IAM policies and optional HTTPS with CloudFront
+
+4️⃣ Steps to Implement This Project
+✅ Step 1: Create an AWS S3 Bucket
+1️⃣ Login to AWS Console → Navigate to S3
+2️⃣ Click "Create Bucket"
+3️⃣ Enter a unique bucket name (e.g., mystaticwebsite-m)
+4️⃣ Uncheck Block all public access (since it's a public website)
+5️⃣ Enable Static website hosting and set index.html as the default document
+6️⃣ Save and create the bucket
+
+✅ Step 2: Upload index.html to S3
+1️⃣ Open the S3 bucket
+2️⃣ Click "Upload" → Select your index.html file
+3️⃣ Set public read access for the file
+4️⃣ Click "Upload"
+
+✅ Step 3: Set Up Public Read Access
+1️⃣ Go to Permissions tab in S3
+2️⃣ Add the following Bucket Policy:
+
+json
+Copy
+Edit
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::mystaticwebsite-m/*"
+            ]
+        }
+    ]
+}
+3️⃣ Click Save to apply the policy
+
+✅ Step 4: Get the Website URL
+1️⃣ Go to Properties → Static Website Hosting
+2️⃣ Copy the Endpoint URL (e.g., http://mystaticwebsite-m.s3-website-us-east-1.amazonaws.com)
+3️⃣ Open the link in a browser → Website is live! 🎉
+
+🚀 Optional Enhancements
+💡 Enable HTTPS – Use Amazon CloudFront to add SSL/TLS security
+💡 Custom Domain Name – Use AWS Route 53 for a branded URL
+💡 Optimize Performance – Enable CDN caching & compression
+
+🌟 Conclusion
+This project demonstrates how to deploy and manage a static website on AWS S3 efficiently. By following these steps, you can host, secure, and optimize your website using AWS services.
+
+Let me know if you need further guidance on adding CloudFront, Route 53, or custom optimizations! 🚀
