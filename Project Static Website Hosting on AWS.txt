@@ -76,4 +76,3 @@ Edit
 🌟 Conclusion
 This project demonstrates how to deploy and manage a static website on AWS S3 efficiently. By following these steps, you can host, secure, and optimize your website using AWS services.
 
-Let me know if you need further guidance on adding CloudFront, Route 53, or custom optimizations! 🚀
